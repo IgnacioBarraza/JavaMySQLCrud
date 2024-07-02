@@ -32,8 +32,6 @@ public class form extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
@@ -41,7 +39,7 @@ public class form extends javax.swing.JFrame {
         createDataBtn = new javax.swing.JButton();
         insertDataBtn = new javax.swing.JButton();
         buscarDataBtn = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        deleteDataBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -49,23 +47,9 @@ public class form extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
-        jButton7 = new javax.swing.JButton();
+        getAllDataBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jButton1.setText("conectar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        jButton2.setText("desconectar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
 
         createDataBtn.setText("Crear");
         createDataBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -89,7 +73,12 @@ public class form extends javax.swing.JFrame {
             }
         });
 
-        jButton6.setText("Eliminar");
+        deleteDataBtn.setText("Eliminar");
+        deleteDataBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteDataBtnActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("ID");
 
@@ -114,10 +103,10 @@ public class form extends javax.swing.JFrame {
 
         jLabel5.setText("Ejemplo de CRUD con Java y MySQL");
 
-        jButton7.setText("Obtener todos los datos");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        getAllDataBtn.setText("Obtener todos los datos");
+        getAllDataBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                getAllDataBtnActionPerformed(evt);
             }
         });
 
@@ -134,9 +123,8 @@ public class form extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(createDataBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(createDataBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
                                     .addComponent(buscarDataBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
                                     .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -147,10 +135,9 @@ public class form extends javax.swing.JFrame {
                                     .addComponent(jTextField3)
                                     .addComponent(jTextField2)
                                     .addComponent(jTextField1)
-                                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(insertDataBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addComponent(jButton7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(deleteDataBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(insertDataBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)))
+                            .addComponent(getAllDataBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(16, 16, 16))
@@ -162,7 +149,7 @@ public class form extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 4, Short.MAX_VALUE))
+                        .addContainerGap(10, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -188,27 +175,14 @@ public class form extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(buscarDataBtn)
-                            .addComponent(jButton6))
+                            .addComponent(deleteDataBtn))
                         .addGap(10, 10, 10)
-                        .addComponent(jButton7)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton2)
-                            .addComponent(jButton1))))
-                .addContainerGap())
+                        .addComponent(getAllDataBtn)
+                        .addGap(47, 47, 47))))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        con = new ConexionSQL();
-        Connection reg = con.ConexionSQL();
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        con.desconectar();
-    }//GEN-LAST:event_jButton2ActionPerformed
 
     private void createDataBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createDataBtnActionPerformed
        // Obtén los valores de los campos de texto
@@ -224,6 +198,7 @@ public class form extends javax.swing.JFrame {
         // Inserta los datos en la base de datos
         if (conn != null) {
             conexion.insertarDatos(id, nombre, direccion, fechaAlta);
+            limpiarInputs();
             conexion.desconectar(); // Desconecta de la base de datos
         } else {
             System.out.println("No se pudo establecer la conexión con la base de datos");
@@ -245,6 +220,7 @@ public class form extends javax.swing.JFrame {
             // Actualiza los datos en la base de datos
             if (conn != null) {
                 conexion.actualizarDatos(id, nombre, direccion, fechaAlta);
+                limpiarInputs();
                 conexion.desconectar(); // Desconecta de la base de datos
             } else {
                 System.out.println("No se pudo establecer la conexión con la base de datos");
@@ -254,9 +230,41 @@ public class form extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_insertDataBtnActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+    private void getAllDataBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_getAllDataBtnActionPerformed
+        try {
+            // Crea una instancia de la clase ConexionSQL
+            ConexionSQL conexion = new ConexionSQL();
+            Connection conn = conexion.ConexionSQL(); // Conecta a la base de datos
+
+            if (conn != null) {
+                // Realiza la consulta para obtener todos los datos
+                ResultSet rs = conexion.obtenerDatos();
+
+                // Obtén el modelo de la tabla
+                DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+
+                // Limpia la tabla antes de añadir nuevos datos
+                model.setRowCount(0);
+
+                // Añade los datos al modelo de la tabla
+                while (rs.next()) {
+                    int id = rs.getInt("id");
+                    String nombre = rs.getString("nombre");
+                    String direccion = rs.getString("direccion");
+                    String fechaAlta = rs.getString("fechaAlta");
+                    model.addRow(new Object[]{id, nombre, direccion, fechaAlta});
+                }
+
+                rs.close();
+                limpiarInputs();
+            } else {
+                System.out.println("No se encontraron resultados");
+            }
+            conexion.desconectar(); // Desconecta de la base de datos
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }//GEN-LAST:event_getAllDataBtnActionPerformed
 
     private void buscarDataBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarDataBtnActionPerformed
         try {
@@ -287,6 +295,7 @@ public class form extends javax.swing.JFrame {
                     }
 
                     rs.close();
+                    limpiarInputs();
                 } else {
                     System.out.println("No se encontraron resultados");
                 }
@@ -301,6 +310,34 @@ public class form extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_buscarDataBtnActionPerformed
 
+    private void deleteDataBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteDataBtnActionPerformed
+        try {
+            // Obtén el valor del campo de texto que contiene el ID
+            int id = Integer.parseInt(jTextField1.getText());
+
+            // Crea una instancia de la clase ConexionSQL
+            ConexionSQL conexion = new ConexionSQL();
+            Connection conn = conexion.ConexionSQL(); // Conecta a la base de datos
+
+            // Elimina los datos en la base de datos
+            if (conn != null) {
+                conexion.eliminarDatos(id);
+                limpiarInputs();
+                conexion.desconectar(); // Desconecta de la base de datos
+            } else {
+                System.out.println("No se pudo establecer la conexión con la base de datos");
+            }
+        } catch (NumberFormatException e) {
+            System.out.println("El ID debe ser un número entero válido");
+        }
+    }//GEN-LAST:event_deleteDataBtnActionPerformed
+
+    private void limpiarInputs() {
+        jTextField1.setText("");
+        jTextField2.setText("");
+        jTextField3.setText("");
+        jTextField4.setText("");
+    }
     /**
      * @param args the command line arguments
      */
@@ -339,11 +376,9 @@ public class form extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buscarDataBtn;
     private javax.swing.JButton createDataBtn;
+    private javax.swing.JButton deleteDataBtn;
+    private javax.swing.JButton getAllDataBtn;
     private javax.swing.JButton insertDataBtn;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

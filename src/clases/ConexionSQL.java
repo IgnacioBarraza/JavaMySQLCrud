@@ -63,10 +63,6 @@ public class ConexionSQL {
         }
     }
     
-    public void limpirInputs() {
-        
-    }
-    
     public void insertarDatos(int id, String nombre, String direccion, String fechaAlta) {
         String sql = "INSERT INTO clientes (id, nombre, direccion, fechaAlta) VALUES (?, ?, ?, ?)";
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -87,7 +83,7 @@ public class ConexionSQL {
         }
     }
     
-     public void actualizarDatos(int id, String nombre, String direccion, String fechaAlta) {
+    public void actualizarDatos(int id, String nombre, String direccion, String fechaAlta) {
         String sql = "UPDATE clientes SET nombre = ?, direccion = ?, fechaAlta = ? WHERE id = ?";
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, nombre);
@@ -95,17 +91,44 @@ public class ConexionSQL {
             pstmt.setString(3, fechaAlta);
             pstmt.setInt(4, id);
             pstmt.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Persona actualizada");
             System.out.println("Datos actualizados correctamente");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
     }
      
-     public ResultSet buscarDatosPorId(int id) {
+    public ResultSet buscarDatosPorId(int id) {
         String sql = "SELECT * FROM clientes WHERE id = ?";
         try {
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setInt(1, id);
+            JOptionPane.showMessageDialog(null, "Persona obtenida");
+            return pstmt.executeQuery();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+     
+    public void eliminarDatos(int id) {
+        String sql = "DELETE FROM clientes WHERE id = ?";
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, id);
+            pstmt.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Persona borrada");
+            System.out.println("Datos eliminados correctamente");
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    public ResultSet obtenerDatos() {
+        String sql = "SELECT * FROM clientes";
+        try  {
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            JOptionPane.showMessageDialog(null, "Personas obtenidas");
+            System.out.println("Datos obtenidos correctamente");
             return pstmt.executeQuery();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
